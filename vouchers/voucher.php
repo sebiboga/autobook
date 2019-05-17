@@ -1,0 +1,1 @@
+<img src='banners_discount_autobook-01.jpg'>
