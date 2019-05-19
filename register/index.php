@@ -164,7 +164,7 @@ hr {border-bottom: 1px solid #fff;}
 			
 			
 			     <label>
-				   <span id="isasiu"><input type=text name="tel" autocomplete="off" id="tel" placeholder="numar de telefon"></span>
+				   <span id="isasiu"><input type=text name="tel" autocomplete="off" id="tel" placeholder="numar de telefon" maxlength="10"></span>
 				 </label>
 			<span class="side-col col-delete" onclick=clearFields()>
 				<span class="control delete">

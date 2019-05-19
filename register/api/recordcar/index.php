@@ -6,12 +6,20 @@ function GUID() {
     return sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
 }
 
+function valid($phone){
+	$result = true;
+	if (substr($phone,0,2)!='07') {$result=false;}
+	if (is_numeric($phone)==1) {} else {$result=false;} 
+	return $result;
+}
+
 
   
 
 if (isset($_POST['tel']) && (trim($_POST['tel'])!='')) {
 	$id=GUID();
     $tel=$_POST['tel'];
+	if (valid($tel)) {
    require_once('dbconnect.php');
      //validez daca exista deja nr tel in baza de date - returnez id-ul
 	 $sql="SELECT id FROM autobook_user WHERE tel='$tel'";
@@ -44,7 +52,7 @@ if (isset($_POST['car']) && (trim($_POST['car'])!='')) {
      $sql="INSERT INTO autobook_vin(id,rn) VALUES ('$id','$car')";
 	   $result = $con -> query($sql);}
 	$idcar = $id;
-}
+}}
 
 if (isset($idcar) && isset($idtel)) {
 	$id=GUID();
