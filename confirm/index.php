@@ -61,8 +61,10 @@
 				  
 			<?php  }?>
 			
+                
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class=""></div>
+                <div class="addthis_inline_share_toolbox"></div>
+            
             
 			</div>
         </div>
@@ -80,7 +82,7 @@
   <script src="assets/theme/js/script.js"></script>
   
  <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570132754db520a2"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ce6621f006830a2"></script>
 
 
 </body>
