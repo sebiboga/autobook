@@ -9,8 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
   <meta name="description" content="">
-  
-  <title>multumesc</title>
+	  <meta property="og:title" content="autobook.space" />
+	  <meta property="og:type" content="website" />
+	  <meta property="og:url" content="https://autobook.space/register/" />
+	  <meta property="og:image" content="http://localhost:81/autobook.space/confirm/assets/images/mbr-1920x1281.jpg" />
+	  <meta property="og:description"   content="totul despre masina ta" />
+  <title>autobook.space</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
