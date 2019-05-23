@@ -228,7 +228,7 @@ function changeInfo() {
    var id ='';
      <?php if(isset($_GET['id'])&&($_GET['id']!='')) {
 		 ?>
-	 id=<?php echo $_GET['id']; ?>
+	 id='<?php echo $_GET['id']; ?>';
 <?php 	 
 		 
 	 }?>
