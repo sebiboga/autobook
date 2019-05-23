@@ -50,8 +50,7 @@
               <?php } 	else {  ?>
 				  
 				  <p class="mbr-text pb-3 mbr-fonts-style display-5">
-                    Nu reusim sa te identificam. Poate ai uitat sa te inregistrezi.
-					<a href="https://autobook.space/register/"></a>
+                    Nu reusim sa te identificam. Poate ai uitat sa <a href="https://autobook.space/register/">te inregistrezi</a>.
 				  
 			<?php  }?>
 			</div>
