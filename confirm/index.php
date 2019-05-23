@@ -12,7 +12,7 @@
 	  <meta property="og:title" content="autobook.space" />
 	  <meta property="og:type" content="website" />
 	  
-	  <meta property="og:image" content="/assets/images/mbr-1920x1281.jpg" />
+	  <meta property="og:image" content="https://autobook.space/confirm/assets/images/mbr-1920x1281.jpg" />
 	  <meta property="og:description"   content="totul despre masina ta" />
   <title>autobook.space</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
