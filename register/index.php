@@ -7,11 +7,14 @@
   <meta name="generator" content="Mobirise v4.4.1, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
- <meta property="og:image" content="http://autobook.space/images/fb.png" />
- <meta property="og:image:secure_url" content="https://autobook.space/images/fb.png" />
- <meta property="og:image:type" content="image/jpeg" />
- <meta property="og:url" content="https://autobook.space/images/fb.png" />
- <meta property="og:description" content="Let's get together and build a SMART CITY. This is the heart of your SMART CAR." />
+ 
+      <meta property="og:title" content="autobook.space" />
+	  <meta property="og:type" content="website" />
+	  
+	  <meta property="og:image" content="https://autobook.space/confirm/assets/images/mbr-1920x1281.jpg" />
+	  <meta property="og:description"   content="totul despre masina ta" />
+
+
 
  <meta property="og:image:alt" content="autobook.SPACE" />
   
