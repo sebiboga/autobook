@@ -60,6 +60,10 @@
                     Nu reusim sa te identificam. Poate ai uitat sa <a class="b1" href="https://autobook.space/register/">te inregistrezi</a>.
 				  
 			<?php  }?>
+			
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class=""></div>
+            
 			</div>
         </div>
     </div>
@@ -75,6 +79,9 @@
   <script src="assets/parallax/jarallax.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
   
-  
+ <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570132754db520a2"></script>
+
+
 </body>
 </html>
