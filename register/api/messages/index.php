@@ -48,3 +48,4 @@ function valid($phone){
 	}
 	 
 
+?>
