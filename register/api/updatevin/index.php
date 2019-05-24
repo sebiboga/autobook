@@ -1,7 +1,7 @@
 <?php 
 
 	if (isset($_POST['id'])) {$id=$_POST['id'];} else {$id='';}
-	if (isset($_POST['vin'])&&(trim($_POST['vin'])!='')) {$vin=$_POST['vin'];
+	if (isset($_POST['vin'])&&(trim($_POST['vin'])!='')&&(strlen($_POST['vin'])==17)) {$vin=$_POST['vin'];
    require_once('dbconnect.php');
    
    $sql = "UPDATE autobook_vin SET vin='".$vin."' WHERE id='".$id."'";
