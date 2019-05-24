@@ -20,11 +20,11 @@ function valid($phone){
    require_once('dbconnect.php');
    
    $sql = "
-    SELECT l.id, u.tel,v.rn FROM autobook_link l
-	INNER JOIN autobook_user u on l.iduser=u.id
-	INNER JOIN autobook_vin v on v.id=l.idvin
-	WHERE l.valid='0' AND u.tel NOT IN (
-		SELECT phone FROM autobook_smssend s WHERE s.command='init' )
+    SELECT v.vin,u.tel,v.rn,v.id FROM `autobook_vin` v 
+	INNER JOIN autobook_link l on l.idvin=v.id 
+	INNER JOIN autobook_user u on l.iduser=u.id 
+	WHERE v.vin IS NULL and l.valid='1' AND u.tel NOT IN (
+		SELECT phone FROM autobook_smssend s WHERE s.command='vinreq' )
    ";
    $result = $con -> query($sql);
     if ($result->num_rows > 0) {
@@ -32,7 +32,7 @@ function valid($phone){
 			  $phone   = $rws['tel'];
 			  $auto    = $rws['rn'];
 			  $authkey = $rws['id'];
-			  $text = "Va rog validati numarul de telefon pentru autovehicolul ".$auto." Click pe: https://autobook.space/confirm/?id=".$authkey;
+			  $text = "Introduceti Seria Caroserie pentru autovehicolul ".$auto." Click pe: https://autobook.space/register/vin/?id=".$authkey;
 		 }
 	 echo "found";
 	     if (!valid($phone)){
@@ -43,7 +43,7 @@ function valid($phone){
 	 } else {echo "none"; $stop=true;}
    
     if (!$stop){
-	 $sql="INSERT INTO autobook_smssend(id,phone,text,sent,command) VALUES ('$id','$phone','$text','0','init')";
+	 $sql="INSERT INTO autobook_smssend(id,phone,text,sent,command) VALUES ('$id','$phone','$text','0','vinreq')";
 	 $result = $con -> query($sql);
 	}
 	 

@@ -7,14 +7,11 @@
   <meta name="generator" content="Mobirise v4.4.1, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
- 
-      <meta property="og:title" content="autobook.space" />
-	  <meta property="og:type" content="website" />
-	  
-	  <meta property="og:image" content="https://autobook.space/confirm/assets/images/mbr-1920x1281.jpg" />
-	  <meta property="og:description"   content="totul despre masina ta" />
-
-
+ <meta property="og:image" content="http://autobook.space/images/fb.png" />
+ <meta property="og:image:secure_url" content="https://autobook.space/images/fb.png" />
+ <meta property="og:image:type" content="image/jpeg" />
+ <meta property="og:url" content="https://autobook.space/images/fb.png" />
+ <meta property="og:description" content="Let's get together and build a SMART CITY. This is the heart of your SMART CAR." />
 
  <meta property="og:image:alt" content="autobook.SPACE" />
   
@@ -161,15 +158,8 @@ hr {border-bottom: 1px solid #fff;}
         </div>
 			<div id="info" >
 			 <div class="wrapperInput">
-			   
-				
-			<input class="line" type=text name="numar"  id="numar" autocomplete="off" placeholder="NUMAR DE INMATRICULARE">
-			
-			
-			     <label>
-				   <span id="isasiu"><input type=text name="tel" autocomplete="off" id="tel" placeholder="numar de telefon" maxlength="10"></span>
-				 </label>
-			<span class="side-col col-delete" onclick=clearFields()>
+				<input class="line" type=text name="serie"  id="serie" autocomplete="off" maxlength="17" placeholder="SERIE CAROSERIE">
+			  		<span class="side-col col-delete" onclick=clearFields()>
 				<span class="control delete">
 					<span class="icon-wrapper dash-icon">
 						<svg class="icon icon-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.982 212.982"><path d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z"></path></svg>
@@ -217,13 +207,12 @@ function changeInfo() {
 }
 
  function clearFields(){
-  $('#numar').empty('');
-  $('#tel').empty('');
+  $('#serie').empty('');
+ 
   
   
-  $('input[name="numar"]').val('');
-  var init_sasiu='<input type=text name="tel" autocomplete="off" id="tel" placeholder="numar de telefon">';
-   $('#isasiu').html(init_sasiu);
+  $('input[name="serie"]').val('');
+ 
   }
   
  function changeopacity(value) {
@@ -235,27 +224,31 @@ function changeInfo() {
 	 
    var result; 
    var numar='';
-    numar = $('input[name="numar"]').val();
-   var tel =  $('input[name="tel"]').val();
-  
-  if (tel!='') {
-	  if (tel.length !=10) {alert("Sigur ai introdus un numar de telefon valid?");} else {
+    numar = $('input[name="serie"]').val();
+   var id ='';
+     <?php if(isset($_GET['id'])&&($_GET['id']!='')) {
+		 ?>
+	 id='<?php echo $_GET['id']; ?>';
+<?php 	 
+		 
+	 }?>
+ 
+	 
 	  
   
-  $.post( "api/recordcar/", { car: numar, tel: tel } , function( result ) { 
+  $.post( "../api/updatevin/", { vin: numar, id:id } , function( result ) { 
   
   alert(result.msg);
   clearFields();
-  document.cookie = "auto="+numar+"; path=/";
   window.location.href = "https://autobook.space/";
   
-	  }, "json")}
+	  }, "json")
 	  
-   } else {alert("introduceti un numar de telefon");}
+   
    }
 
   
-  var xinput = document.getElementById("numar");
+  var xinput = document.getElementById("serie");
   xinput.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
    event.preventDefault();
@@ -263,13 +256,7 @@ function changeInfo() {
   }
  });
 
-var yinput = document.getElementById("tel");
-  yinput.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-   
-   here();
-  }
-});
+
 
 
   
