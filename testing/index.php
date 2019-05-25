@@ -62,10 +62,11 @@ function rnvalid($number){
 	 $result = $con -> query($sql);
 	 if ($result->num_rows > 0) {
 		 while ($rws=$result->fetch_assoc()){
+			 
 			  $id = $rws['rn'];
 			  echo $id;
 			  echo " ";
-		 echo rnvalid($id); 
+		 if (rnvalid($id)) {echo "OK";} else {echo "--- wrong";}; 
 		 echo "<br>";
 	 }}
  
