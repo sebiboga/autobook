@@ -74,8 +74,5 @@ function valid($phone){
 		 if (rnvalid($id)) {echo "good";} else {echo "wrong";}
 		 echo "<br>";
 		 }
-	 } else {
-	 
-
  
 ?>
