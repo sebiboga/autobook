@@ -3,7 +3,7 @@
 function rnvalid($number){ 
 		$number = $string = str_replace(' ', '', $number);
 		$number = $string = str_replace('-', '', $number);
-
+		$number=strtoupper($number);
   $valid=false;
   $c1 = array("AB","AG","AR","BC","BH","BN","BR","BT","BV","BZ","CJ","CL","CS","CT","CV","DB","DJ","GJ","GL","GR","HD","HR","IF","IL","IS","MH","MM","MS","NT","OT","PH","SB","SJ","SM","SV","TL","TM","TR","VL","VN","VS");
 
@@ -52,12 +52,6 @@ function rnvalid($number){
   return $valid;  
 }
 
-function valid($phone){
-	$result = true;
-	if (substr($phone,0,2)!='07') {$result=false;}
-	if (is_numeric($phone)==1) {} else {$result=false;} 
-	return $result;
-}
 
 
   
@@ -71,7 +65,7 @@ function valid($phone){
 			  $id = $rws['rn'];
 			  echo $id;
 			  echo " ";
-		 if (rnvalid($id)) {echo "good";} else {echo "wrong";}
+		 echo rnvalid($id); 
 		 echo "<br>";
 	 }}
  
