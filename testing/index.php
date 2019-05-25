@@ -73,6 +73,6 @@ function valid($phone){
 			  echo " ";
 		 if (rnvalid($id)) {echo "good";} else {echo "wrong";}
 		 echo "<br>";
-		 }
+	 }}
  
 ?>
