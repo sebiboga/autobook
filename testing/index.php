@@ -69,7 +69,10 @@ function rnvalid($number){
 			  $id = $rws['rn'];
 			  echo $id;
 			  echo " ";
-		 if (rnvalid($id)) {echo "OK";} else {echo "--- wrong";}; 
+		 if (rnvalid($id)) {echo "OK";} else {
+			 $sql1="DELETE FROM autobook_vin WHERE rn='$id'";
+			 $result1 = $con -> query($sql1);
+			 echo "--- wrong";}; 
 		 echo "<br>";
 	 }}
  
