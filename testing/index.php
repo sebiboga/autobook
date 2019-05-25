@@ -28,7 +28,10 @@ function rnvalid($number){
 	} else {
 		if (substr($number,0,3)=="MAI") { $valid=true;}
 		 else {
-		if (substr($number,0,1)=="A")	{ $valid=true;}
+		if (substr($number,0,1)=="A")	{ 
+		     $n=strlen($number)-1;
+			 if (is_numeric(substr($number,1,$n))) {$valid=true;}
+			 }
 		 else {
 		if (substr($number,0,2)=="CD")	{ $valid=true;}
          else {
