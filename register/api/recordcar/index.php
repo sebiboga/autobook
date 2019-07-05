@@ -9,11 +9,14 @@ function GUID() {
 function rnvalid($number){ 
 		$number = $string = str_replace(' ', '', $number);
 		$number = $string = str_replace('-', '', $number);
-
+		
+ 
+ 
   $valid=false;
   $c1 = array("AB","AG","AR","BC","BH","BN","BR","BT","BV","BZ","CJ","CL","CS","CT","CV","DB","DJ","GJ","GL","GR","HD","HR","IF","IL","IS","MH","MM","MS","NT","OT","PH","SB","SJ","SM","SV","TL","TM","TR","VL","VN","VS");
 
-  if (in_array(substr($number,0,2),$c1)) { 
+  if (in_array(substr(strtoupper($number),0,2),$c1)) { 
+  echo $number; echo "OK !<br/>";
     if (is_numeric(substr($number,2,3))) {
 		if (ctype_alpha(substr($number,5,3))) {$valid=true;}
 		
@@ -72,6 +75,7 @@ if (isset($_POST['tel']) && (trim($_POST['tel'])!='')) {
 	$id=GUID();
     $tel=$_POST['tel'];
 	if (valid($tel)) {
+		echo "phone number is valid"; echo "<br/>";
    require_once('dbconnect.php');
      //validez daca exista deja nr tel in baza de date - returnez id-ul
 	 $sql="SELECT id FROM autobook_user WHERE tel='$tel'";
@@ -93,7 +97,7 @@ if (isset($_POST['car']) && (trim($_POST['car'])!='')) {
 	$id=GUID();
     $car=$_POST['car'];
 	if (rnvalid($car)) {
-	
+	echo "car number is valid"; echo "<br/>";
     require_once('dbconnect.php');
 	 //validez daca am vin empty si nr auto deja in DB... atunci nu mai adaug nr auto inca o data.. si returnez id
 	  $sql="SELECT id FROM autobook_vin WHERE vin IS NULL AND rn='$car'";
