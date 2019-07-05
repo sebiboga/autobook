@@ -16,7 +16,7 @@ function rnvalid($number){
   $c1 = array("AB","AG","AR","BC","BH","BN","BR","BT","BV","BZ","CJ","CL","CS","CT","CV","DB","DJ","GJ","GL","GR","HD","HR","IF","IL","IS","MH","MM","MS","NT","OT","PH","SB","SJ","SM","SV","TL","TM","TR","VL","VN","VS");
 
   if (in_array(substr(strtoupper($number),0,2),$c1)) { 
-  echo $number; echo "OK !<br/>";
+  
     if (is_numeric(substr($number,2,3))) {
 		if (ctype_alpha(substr($number,5,3))) {$valid=true;}
 		
@@ -75,7 +75,7 @@ if (isset($_POST['tel']) && (trim($_POST['tel'])!='')) {
 	$id=GUID();
     $tel=$_POST['tel'];
 	if (valid($tel)) {
-		echo "phone number is valid"; echo "<br/>";
+		
    require_once('dbconnect.php');
      //validez daca exista deja nr tel in baza de date - returnez id-ul
 	 $sql="SELECT id FROM autobook_user WHERE tel='$tel'";
