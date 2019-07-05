@@ -97,7 +97,7 @@ if (isset($_POST['car']) && (trim($_POST['car'])!='')) {
 	$id=GUID();
     $car=$_POST['car'];
 	if (rnvalid($car)) {
-	echo "car number is valid"; echo "<br/>";
+	
     require_once('dbconnect.php');
 	 //validez daca am vin empty si nr auto deja in DB... atunci nu mai adaug nr auto inca o data.. si returnez id
 	  $sql="SELECT id FROM autobook_vin WHERE vin IS NULL AND rn='$car'";
