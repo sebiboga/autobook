@@ -24,7 +24,7 @@ function valid($phone){
 	INNER JOIN autobook_user u on l.iduser=u.id
 	INNER JOIN autobook_vin v on v.id=l.idvin
 	WHERE l.valid='0' AND u.tel NOT IN (
-		SELECT phone FROM autobook_smssend s WHERE s.command='init' )
+		SELECT phone FROM autobook_smssend s WHERE s.command='init' and s.ckey='$authkey' )
    ";
    $result = $con -> query($sql);
     if ($result->num_rows > 0) {
@@ -43,7 +43,7 @@ function valid($phone){
 	 } else {echo "none"; $stop=true;}
    
     if (!$stop){
-	 $sql="INSERT INTO autobook_smssend(id,phone,text,sent,command) VALUES ('$id','$phone','$text','0','init')";
+	 $sql="INSERT INTO autobook_smssend(id,phone,text,sent,command,ckey) VALUES ('$id','$phone','$text','0','init','$authkey')";
 	 $result = $con -> query($sql);
 	}
 	 
