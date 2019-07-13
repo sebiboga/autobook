@@ -206,7 +206,7 @@
             },
             ".mbr-text": {
               "color": "#767676",
-              "text-align": "left"
+              "text-align": "center"
             }
           },
           "_name": "content6",
@@ -258,7 +258,7 @@
             },
             ".mbr-text": {
               "color": "#767676",
-              "text-align": "left"
+              "text-align": "center"
             }
           },
           "_name": "content7",
