@@ -23,8 +23,8 @@ function valid($phone){
     SELECT v.vin,u.tel,v.rn,v.id FROM `autobook_vin` v 
 	INNER JOIN autobook_link l on l.idvin=v.id 
 	INNER JOIN autobook_user u on l.iduser=u.id 
-	WHERE v.vin IS NULL and l.valid='1' AND u.tel NOT IN (
-		SELECT phone FROM autobook_smssend s WHERE s.command='vinreq' )
+	WHERE v.vin IS NULL and l.valid='1' AND v.rn NOT IN (
+		SELECT v.rn FROM autobook_smssend s INNER JOIN autobook_vin v on v.id=s.ckey WHERE s.command='vinreq' )
    ";
    $result = $con -> query($sql);
     if ($result->num_rows > 0) {
