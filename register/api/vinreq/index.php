@@ -43,7 +43,7 @@ function valid($phone){
 	 } else {echo "none"; $stop=true;}
    
     if (!$stop){
-	 $sql="INSERT INTO autobook_smssend(id,phone,text,sent,command) VALUES ('$id','$phone','$text','0','vinreq')";
+	 $sql="INSERT INTO autobook_smssend(id,phone,text,sent,command,ckey) VALUES ('$id','$phone','$text','0','vinreq','$authkey')";
 	 $result = $con -> query($sql);
 	}
 	 
