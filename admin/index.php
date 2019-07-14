@@ -71,8 +71,14 @@ li {
 		 while ($rws=$result->fetch_assoc()){
 	              $auto = $rws['rn'];
 				  $vin	= $rws['vin'];
+				  $vin=str_replace('"','',$vin);
+				  $vin=str_replace("'","",$vin);
+				  $rca = $rws['rca'];
+				  $itp = $rws['itp'];
+				  $vigneta = $rws['rovigneta'];
+				  
 				  ?>
-				  <button onclick=showdata($(this).text(),'<?php echo $vin;?>');><?php echo strtoupper($auto);	  ?></button>
+				  <button onclick=showdata($(this).text(),'<?php echo $vin;?>','<?php echo $rca;?>','<?php echo $itp;?>','<?php echo $vigneta;?>');><?php echo strtoupper($auto);	  ?></button>
 				<?php  }}
 	   
 	?>
@@ -141,10 +147,13 @@ li {
 </div>
 
 <script>
- function showdata(x,y) {
+ function showdata(x,y,rca,itp,vigneta) {
 	 
 	document.getElementById("nrauto").innerHTML = x; 
 	document.getElementById("seriesasiu").innerHTML = y;
+	document.getElementById("rca").value = rca;
+	document.getElementById("itp").value = itp;
+	document.getElementById("vigneta").value = vigneta;
  }
  
  function admin() {
