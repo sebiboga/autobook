@@ -42,6 +42,8 @@ li {
   clear: both;
 }
 
+.goright{float:right;}
+
 .activ {
 	    background-color: #737373;	
 }
@@ -78,11 +80,13 @@ li {
 	</ul>
   </div>
   <div class="column right" style="background-color:#bbb;">
+  <button class="goright" onClick=admin();> publish </button>
     <h2>Datele autovehicolului</h2>
 		
     <ul>
 	  <li id="nrauto"></li>
 	  <li id="seriesasiu"></li>
+	  
 	</ul>
 	<hr/>
 	
@@ -92,7 +96,7 @@ li {
 		<table>
 		 <tr>
 		 <td>
-		    <input type="date" name="rca">
+		    <input type="date" name="rca" id="rca">
 		  </td>
 		  <td>
 		   <a href="https://www.rcam.ro/ro/polite-rca" target="_blank"><img src='img/rca.png'></a><br/>
@@ -108,14 +112,12 @@ li {
 		<table>
 		<tr>
 		<td>
-		<input type="date" name="itp">
+		<input type="date" name="itp" id="itp">
 		</td>
 		
 		 <td>
 		<a href="http://prog.rarom.ro/rarpol/rarpol.asp" target="_blank"><img src='img/rarom.png' width=300></a><br/>
 		</td>
-		  
-		  
 		</tr>
 		</table>
 			<hr/>
@@ -124,10 +126,8 @@ li {
 	    <h2>ROVIGNETA</h2>
 		<table>
 		<tr>
-		
-		
 		 <td>
-		<input type="date" name="vigneta">
+		<input type="date" name="vigneta" id="vigneta">
 		</td> 
 		<td>
 		<a href="http://www.cnadnr.ro/ro/verificare-rovinieta" target="_blank"><img src='img/cnair.png'></a><br/>
@@ -145,6 +145,43 @@ li {
 	 
 	document.getElementById("nrauto").innerHTML = x; 
 	document.getElementById("seriesasiu").innerHTML = y;
+ }
+ 
+ function admin() {
+	 var nrauto = document.getElementById("nrauto").innerHTML;
+	 var seriesasiu = document.getElementById("seriesasiu").innerHTML;
+	 var rca = document.getElementById("rca").value;
+	 var itp = document.getElementById("itp").value;
+	 var vigneta = document.getElementById("vigneta").value;
+	 
+	 console.log(nrauto);
+	 console.log(seriesasiu);
+	 console.log(rca);
+	 console.log(itp);
+	 console.log(vigneta);
+	 
+	 
+	 
+var values = { 
+            'car'   	:nrauto,
+			'rca'		:rca,
+			'itp'		:itp,
+			'vigneta'	:vigneta,
+			'vin'		:seriesasiu
+        };
+
+ $.ajax({
+        url: "controller.php",
+        type: "post",
+        data: values ,
+		dataType  : 'json',
+        success: function (response) {
+
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus, errorThrown);
+        }
+    });
  }
 </script>
 
