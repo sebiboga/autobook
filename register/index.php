@@ -180,7 +180,7 @@ hr {border-bottom: 1px solid #fff;}
 			 </div>
 			 
 			 <div class="mbr-white align-right full block">
-				 <button class="btn btn-md btn-white-outline display-4 right" onclick=here();>register</button> 
+				 <button class="btn btn-md btn-white-outline display-4 right" onclick=here();>inregistreaza</button> 
 			
 			 </div>
 				

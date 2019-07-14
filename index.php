@@ -194,7 +194,8 @@ hr {border-bottom: 1px solid #fff;}
 			 
 			 <div class="mbr-white align-right full block">
 			 <!--<a href="admin" class="right">admin</a>!-->
-			 <label><a href="register/" class="right">register</a></label>
+			 <label><a href="register/" class="right">inregistreaza</a></label>
+			 <label><a href="beneficii/" class="right">beneficii</a></label>
 			 <label><a href="vouchers/" class="right">parteneri</a></label>
 			
 			 <label><a href="cookiepolicy.html" class="right">cookies</a></label>
