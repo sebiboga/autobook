@@ -198,7 +198,7 @@ hr {border-bottom: 1px solid #fff;}
 			 <label><a href="beneficii/" class="right">beneficii</a></label>
 			 <label><a href="vouchers/" class="right">parteneri</a></label>
 			
-			 <label><a href="cookiepolicy.html" class="right">cookies</a></label>
+			 <label><a href="politicacookie/" class="right">cookies</a></label>
 			 </div>			
     </div>
 
