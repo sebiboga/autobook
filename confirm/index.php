@@ -46,6 +46,7 @@
 			<?php 
 				if (isset($_GET['id']) && ($_GET['id']!='')) {
 					$id = $_GET['id'];
+					$id = str_replace("'","",$id);
 				   require_once('dbconnect.php');
 					 $sql="UPDATE autobook_link SET valid='1' WHERE id='$id'";
 					 $result = $con -> query($sql);
