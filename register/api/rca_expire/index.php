@@ -27,7 +27,9 @@ function GUID() {
 			SELECT u.tel,l.id FROM `autobook_vin` v 
 			INNER JOIN autobook_link l ON l.idvin=v.id
 			INNER JOIN autobook_user u ON u.id = l.iduser
-			WHERE rn='$auto'
+			WHERE rn='$auto' and l.id NOT IN (
+			SELECT ckey FROM `autobook_smssend` where year(timestamp) = year(now()) and month(timestamp)=month(now()) and day(timestamp)=day(now())
+			)
 			";  
 			  $result_phone = $con -> query($sql_phone);
 			  if ($result_phone->num_rows > 0) {
