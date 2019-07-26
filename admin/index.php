@@ -47,6 +47,12 @@ li {
 .activ {
 	    background-color: #737373;	
 }
+
+.item_button {}
+.item_button:focus {
+	background-color:blue;
+}
+
 </style>
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -78,7 +84,7 @@ li {
 				  $vigneta = $rws['rovigneta'];
 				  
 				  ?>
-				  <button onclick=showdata($(this).text(),'<?php echo $vin;?>','<?php echo $rca;?>','<?php echo $itp;?>','<?php echo $vigneta;?>');><?php echo strtoupper($auto);	  ?></button>
+				  <button class="item_button" onclick=showdata($(this).text(),'<?php echo $vin;?>','<?php echo $rca;?>','<?php echo $itp;?>','<?php echo $vigneta;?>');><?php echo strtoupper($auto);	  ?></button>
 				<?php  }}
 	   
 	?>
