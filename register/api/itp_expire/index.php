@@ -37,9 +37,10 @@ function GUID() {
 					 $phone 	= $phones['tel'];
 					 $authkey 	= $phones['id'];
 					 $timestamp	= date("Y-m-d H:i:s");
+					 $id=GUID();
 					     $sql_insert="
 						 INSERT INTO autobook_smssend(id,phone,text,sent,command,ckey,timestamp) VALUES ('$id','$phone','$text','0','itp_expired','$authkey','$timestamp')";
-					     echo $sql_insert;
+					     
 						 $result_insert = $con -> query($sql_insert);
 															}
 												}	
