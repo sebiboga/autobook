@@ -26,11 +26,16 @@ function valid($phone){
 			  $phone = $rws['phone'];
 			  $text  = $rws['text'];
 			  $now	 = date("Y-m-d H:i:s");
+			  $command = $rws['command'];
 			  
 			    
 		 }
-		 
-		 $sqlu="UPDATE autobook_smssend SET sent='1',timestamp='$now' WHERE phone='$phone'";
+		 if ($command=='rca_expired') {
+			 $sqlu="UPDATE autobook_smssend SET sent='1' WHERE phone='$phone'";
+		 }
+		 else {
+		      $sqlu="UPDATE autobook_smssend SET sent='1',timestamp='$now' WHERE phone='$phone'";
+		 }
 		 $resultu = $con -> query($sqlu);
 	}
  echo '{"phone":"'.$phone.'","text":"'.$text.'"}';
