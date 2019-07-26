@@ -30,7 +30,7 @@ function valid($phone){
 			  
 			    
 		 }
-		 if ($command=='rca_expired') {
+		 if (($command=='rca_expired')||($command=='itp_expired')) {
 			 $sqlu="UPDATE autobook_smssend SET sent='1' WHERE phone='$phone'";
 		 }
 		 else {
