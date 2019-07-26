@@ -9,7 +9,7 @@ function GUID() {
 	$id=GUID();
    require_once('dbconnect.php');
    
-   $sql = "SELECT rn, rca,datediff(itp,now()) as itpdiff FROM `autobook_vin` WHERE (itp IS NOT NULL) and (year(itp)>'2000') and datediff(itp,now())<=14";
+   $sql = "SELECT rn, itp,datediff(itp,now()) as itpdiff FROM `autobook_vin` WHERE (itp IS NOT NULL) and (year(itp)>'2000') and datediff(itp,now())<=14";
    $result = $con -> query($sql);
    
     if ($result->num_rows > 0) {
