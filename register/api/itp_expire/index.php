@@ -28,7 +28,7 @@ function GUID() {
 			INNER JOIN autobook_link l ON l.idvin=v.id
 			INNER JOIN autobook_user u ON u.id = l.iduser
 			WHERE rn='$auto' and l.id NOT IN (
-			SELECT ckey FROM `autobook_smssend` where year(timestamp) = year(now()) and month(timestamp)=month(now()) and day(timestamp)=day(now())
+			SELECT ckey FROM `autobook_smssend` where year(timestamp) = year(now()) and month(timestamp)=month(now()) and day(timestamp)=day(now()) and command='itp_expired'
 			)
 			";  
 			  $result_phone = $con -> query($sql_phone);
@@ -39,7 +39,8 @@ function GUID() {
 					 $timestamp	= date("Y-m-d H:i:s");
 					     $sql_insert="
 						 INSERT INTO autobook_smssend(id,phone,text,sent,command,ckey,timestamp) VALUES ('$id','$phone','$text','0','itp_expired','$authkey','$timestamp')";
-					     $result_insert = $con -> query($sql_insert);
+					     echo $sql_insert;
+						 $result_insert = $con -> query($sql_insert);
 															}
 												}	
 			  
