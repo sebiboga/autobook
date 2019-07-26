@@ -114,5 +114,8 @@ button{
 }
 button:active {
 	    background-color: blue;
+}
+button:focus {
+	    background-color: blue;
 	
 }
