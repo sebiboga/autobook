@@ -201,7 +201,9 @@ hr {border-bottom: 1px solid #fff;}
 </section>
 <script>
 
-
+setInputFilter(document.getElementById("tel"), function(value) {
+  return /^\d*\.?\d*$/.test(value);
+}
 
 
 
