@@ -164,7 +164,7 @@ hr {border-bottom: 1px solid #fff;}
 			
 			
 			     <label>
-				   <span id="isasiu"><input type=text name="tel" autocomplete="off" id="tel" placeholder="numar de telefon" maxlength="10"></span>
+				   <span id="isasiu"><input type=text name="tel" autocomplete="off" id="tel" placeholder="numar de telefon" maxlength="10"  onkeyup="this.value=this.value.replace(/[^\d]/,'')"></span>
 				 </label>
 			<span class="side-col col-delete" onclick=clearFields()>
 				<span class="control delete">
@@ -200,28 +200,6 @@ hr {border-bottom: 1px solid #fff;}
 
 </section>
 <script>
-// Restricts input for each element in the set of matched elements to the given inputFilter.
-(function($) {
-  $.fn.inputFilter = function(inputFilter) {
-    return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
-      if (inputFilter(this.value)) {
-        this.oldValue = this.value;
-        this.oldSelectionStart = this.selectionStart;
-        this.oldSelectionEnd = this.selectionEnd;
-      } else if (this.hasOwnProperty("oldValue")) {
-        this.value = this.oldValue;
-        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
-      }
-    });
-  };
-}(jQuery));
-
-$(document).ready(function() {
-  // Restrict input to digits by using a regular expression filter.
-  $("#tel").inputFilter(function(value) {
-    return /^\d*$/.test(value);
-  });
-});
 
 
 	
