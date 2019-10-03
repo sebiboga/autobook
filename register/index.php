@@ -200,9 +200,10 @@ hr {border-bottom: 1px solid #fff;}
 
 </section>
 <script>
-function setInputFilter(textbox, inputFilter) {
-  ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
-    textbox.addEventListener(event, function() {
+// Restricts input for each element in the set of matched elements to the given inputFilter.
+(function($) {
+  $.fn.inputFilter = function(inputFilter) {
+    return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
       if (inputFilter(this.value)) {
         this.oldValue = this.value;
         this.oldSelectionStart = this.selectionStart;
@@ -212,13 +213,15 @@ function setInputFilter(textbox, inputFilter) {
         this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
       }
     });
+  };
+}(jQuery));
+
+$(document).ready(function() {
+  // Restrict input to digits by using a regular expression filter.
+  $("#tel").inputFilter(function(value) {
+    return /^\d*$/.test(value);
   });
-}
-
-setInputFilter(document.getElementById("tel"), function(value) {
-  return /^\d*\.?\d*$/.test(value);
-}
-
+});
 
 
 	
