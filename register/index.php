@@ -239,6 +239,9 @@ function changeInfo() {
    var numar='';
     numar = $('input[name="numar"]').val();
    var tel =  $('input[name="tel"]').val();
+   
+   if (numar!='') {
+   
   
   if (tel!='') {
 	  if (tel.length !=10) {alert("Sigur ai introdus un numar de telefon valid?");} else {
@@ -254,6 +257,7 @@ function changeInfo() {
 	  }, "json")}
 	  
    } else {alert("introduceti un numar de telefon");}
+   } else {  alert("introduceti un numar de masina");}
    }
 
   
