@@ -257,7 +257,7 @@ function changeInfo() {
 	  }, "json")}
 	  
    } else {alert("introduceti un numar de telefon");}
-   } else {  alert("introduceti un numar de masina");}
+   } else {  alert("introduceti un numar de inmatriculare");}
    }
 
   
