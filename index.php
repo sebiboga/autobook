@@ -255,11 +255,11 @@ function changeInfo() {
   
   
    if (numar!='') {
-   if (tel!='') {
-	  if (tel.length !=10) {alert("Sigur ai introdus un numar de telefon valid?");} else {
+   if (sasiu!='') {
+	  if (sasiu.length !=17) {alert("Sigur ai introdus o serie de sasiu valida?");} else {
 	  
   
-  $.post( "api/recordcar/", { car: numar, tel: tel } , function( result ) { 
+  $.post( "api/recordcar/", { car: numar, vin: sasiu } , function( result ) { 
   
   alert(result.msg);
   clearFields();
@@ -268,7 +268,7 @@ function changeInfo() {
   
 	  }, "json")}
 	  
-   } else {alert("introduceti un numar de telefon");}
+   } else {alert("introduceti o serie de caroserie");}
    } else {  alert("introduceti un numar de inmatriculare");}
    
    
