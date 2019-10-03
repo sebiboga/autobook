@@ -254,6 +254,25 @@ function changeInfo() {
   console.log($('input[name="sasiu"]').val());
   
   
+   if (numar!='') {
+   if (tel!='') {
+	  if (tel.length !=10) {alert("Sigur ai introdus un numar de telefon valid?");} else {
+	  
+  
+  $.post( "api/recordcar/", { car: numar, tel: tel } , function( result ) { 
+  
+  alert(result.msg);
+  clearFields();
+  document.cookie = "auto="+numar+"; path=/";
+  window.location.href = "https://autobook.space/";
+  
+	  }, "json")}
+	  
+   } else {alert("introduceti un numar de telefon");}
+   } else {  alert("introduceti un numar de inmatriculare");}
+   
+   
+  
   $.post( "api/recordcar/", { car: numar, vin: sasiu } , function( result ) { 
   console.log( result.msg ); 
   if (result.msg==='new car') {
