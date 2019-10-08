@@ -160,11 +160,11 @@ hr {border-bottom: 1px solid #fff;}
 			 <div class="wrapperInput">
 			   
 				
-			<input class="line" type=text name="numar"  id="numar" autocomplete="off" placeholder="NUMAR DE INMATRICULARE">
+			<input class="line" type=text name="numar"  id="numar" autocomplete="off"  maxlength="8" placeholder="NUMAR DE INMATRICULARE">
 			
 			
 			     <label>
-				   <span id="isasiu"><input type=text name="sasiu" autocomplete="off" id="sasiu" placeholder="Serie de sasiu"></span>
+				   <span id="isasiu"><input type=text name="sasiu" autocomplete="off" id="sasiu" maxlength="17" placeholder="Serie de sasiu"></span>
 				 </label>
 			<span class="side-col col-delete" onclick=clearFields()>
 				<span class="control delete">
