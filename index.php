@@ -236,7 +236,7 @@ function changeInfo() {
   $('#rovignetadata').empty('');
   
   $('input[name="numar"]').val('');
-  var init_sasiu='<input type=text name="sasiu" autocomplete="off" id="sasiu" placeholder="Serie de sasiu">';
+  var init_sasiu='<input type=text name="sasiu" autocomplete="off" id="sasiu" maxlength="17" placeholder="Serie de sasiu">';
    $('#isasiu').html(init_sasiu);
   }
   
