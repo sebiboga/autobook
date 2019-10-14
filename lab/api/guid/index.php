@@ -1,4 +1,6 @@
 <?php
+ header("Access-Control-Allow-Origin: *");
+
   function guid(){
 if (function_exists('com_create_guid') === true)
     return trim(com_create_guid(), '{}');
