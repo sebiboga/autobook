@@ -1,2 +1,2 @@
 azi este:
-<?php date("h:i:sa"); ?>
+<?php echo date("h:i:sa"); ?>
