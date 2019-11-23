@@ -2,7 +2,7 @@
  $rn='';
  if (isset($_GET['number'])) {$rn = $_GET['number']; $rn = str_replace("-","",$rn); $rn = str_replace(" ","",$rn); $rn =  strtoupper($rn);}
  require_once('dbconnect.php');
- $sql="SELECT * FROM autobook_vin WHERE rn = '$rn' ORDER BY timestamp DESC LIMIT 1";
+ $sql="SELECT * FROM autobook_vin WHERE rn = '$rn' ";
  $result = $con -> query($sql);
  
   function prettycarnumber($auto) {
