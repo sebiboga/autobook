@@ -253,34 +253,8 @@ function changeInfo() {
   console.log($('input[name="numar"]').val());
   console.log($('input[name="sasiu"]').val());
   
-  
-   if (numar!='') {
-   if (sasiu!='') {
-	  if (sasiu.length !=17) {alert("Sigur ai introdus o serie de sasiu valida?");} else {
-	  
-  
-  $.post( "api/recordcar/", { car: numar, vin: sasiu } , function( result ) { 
-  
-  alert(result.msg);
-  clearFields();
-  document.cookie = "auto="+numar+"; path=/";
-  window.location.href = "https://autobook.space/";
-  
-	  }, "json")}
-	  
-   } else {alert("introduceti o serie de caroserie");}
-   } else {  alert("introduceti un numar de inmatriculare");}
+ 
    
-   
-  
-  $.post( "api/recordcar/", { car: numar, vin: sasiu } , function( result ) { 
-  console.log( result.msg ); 
-  if (result.msg==='new car') {
-      changeInfo();
-  }
-  
-  }, "json");
-  
   
   if(typeof numar != 'undefined')
   if (numar.length){
