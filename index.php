@@ -197,6 +197,7 @@ hr {border-bottom: 1px solid #fff;}
 			 <label><a href="register/" class="right">inregistreaza</a></label>
 			 <label><a href="beneficii/" class="right">beneficii</a></label>
 			 <label><a href="vouchers/" class="right">parteneri</a></label>
+			 <label><a href="community/" class="right">comunitate</a></label>
 			
 			 <label><a href="politicacookie/" class="right">cookies</a></label>
 			 </div>			
