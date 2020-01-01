@@ -187,7 +187,7 @@ hr {border-bottom: 1px solid #fff;}
 			  <label class="btn-primary"><span id="rcadata"></span></label> 
 			  <label class="btn-success"><span id="itpdata"></span></label> 
 			  <label class="btn-danger"><span id="rovignetadata"></span></label> <hr>
-			  <label class="btn-success"><span id="result"></span></label> <hr>
+			  <label class="btn-success"><span id="result"><a href="https://brave.com/aut947"<img src="https://brave.com/wp-content/uploads/2018/02/brave_logo_2color_reversed.svg" width=300/></a></span></label>  <hr>
 			  
             </div>		
 
