@@ -219,7 +219,7 @@ hr {border-bottom: 1px solid #fff;}
         }
     }
 
-showPosition();
+//showPosition();
 	
 changeInfo();
 function changeInfo() {
